@@ -1,2 +1,0 @@
-# premiere_nsi
- 
