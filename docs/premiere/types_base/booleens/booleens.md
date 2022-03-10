@@ -50,14 +50,14 @@ Les portes logiques sont représentées conventionnellement par les schémas ci-
 
 | Non A | A ou B | A et B | A xor B |
 | --- | --- | --- | --- |
-|![](img/Not.png) | ![](img/OU.png) | ![](img/ET.png) | ![](img/XOR.png) |
+|![](/img/Not.png) | ![](/img/OU.png) | ![](/img/ET.png) | ![](/img/XOR.png) |
 
 
 La combinaison des portes logiques permet de construire les composants de base d’un ordinateur comme, par exemple, l’addition de nombres binaires dans le processeur. Dans ce cas, les valeurs booléennes Vrai et Faux sont interprétées comme 1 et 0.
 
 Dans le schéma ci-dessous, la sortie S est la somme des deux bits A et B, et R la retenue. Ainsi, si A vaut 1 et B vaut 1, la somme est 2, soit 10 en binaire, donc S vaut 0 et R vaut 1.
 
-![Additionneur 1 bit](img/add.png)
+![Additionneur 1 bit](/img/add.png)
 
 ## 3. Les expressions logiques : évaluation «court-circuit»
 
@@ -75,3 +75,7 @@ Par contre, si l’on écrit ``x != 0 and y/x > 0``. Si x est nul, ``x != 0`` es
 
 En résumé, dans une expression conjonctive A and B and C and …, la première condition fausse arrête le calcul de l’expression, qui vaut False.	
 Dans une expression disjonctive A or B or C or …, la première condition vraie arrête le calcul de l’expression, qui vaut True.
+
+<iframe title="Représentation binaire des entiers naturels" src="https://h5p.lyceum.fr/3402212386/embed"></iframe>
+
+Si l'exercice ne s'affiche pas correctement, rendez-vous sur <a href="h5p.lyceum.fr">h5p.lyceum.fr</a>
