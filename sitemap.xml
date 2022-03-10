@@ -11,7 +11,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://sibylleginger.github.io/booleens/</loc>
+         <loc>https://sibylleginger.github.io/algo/</loc>
+         <lastmod>2022-03-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sibylleginger.github.io/types_bases/</loc>
+         <lastmod>2022-03-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sibylleginger.github.io/types_bases/TP%20conversion%20bases/</loc>
+         <lastmod>2022-03-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sibylleginger.github.io/types_bases/booleens/</loc>
          <lastmod>2022-03-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
