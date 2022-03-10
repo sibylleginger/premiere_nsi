@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>TP tris correction - My Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Welcome to MkDocs</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">TP tris correction</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../booleens/" class="nav-link">La logique booléenne</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../booleens/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            
+            <li class="nav-item" data-level="1"><a href="#algorithmes-de-tris" class="nav-link">Algorithmes de tris</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#tri-par-selection" class="nav-link">Tri par Sélection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#tri-par-insertion" class="nav-link">Tri par Insertion</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h5 id="nsi-specialite-nsi-premiere-jjdides-nov2021-sroux-janv2022">NSI Spécialité NSI Première - J.J.Dides nov.2021 - S.Roux janv.2022</h5>
+<h1 id="algorithmes-de-tris">Algorithmes de tris</h1>
+<p>Dans ce notebook nous allons implémenter en Python, les deux algorithmes de tris vus en cours : <strong>le tri par sélection et le tri par insertion</strong></p>
+<h2 id="tri-par-selection">Tri par Sélection</h2>
+<p>Le tri par sélection parcours la liste de la gauche vers la droite, en maintenant sur la gauche une partie de la liste déjà triée et où les éléments sont rangés à leur place définitive.   <br />
+A chaque étape, on cherche le plus petit élément dans la partie de droite non triée de la liste, puis on l'échange avec l'élément le plus à gauche de cette partie non triée :</p>
+<p><img alt="" src="TriSelection.png" /></p>
+<p>Pour implémenter en Python cet algorithme, nous allons nous aider de l'algorithme construit en cours et <strong>diviser les différentes étapes en plusieurs fonctions</strong>.</p>
+<h3 id="application"><font color=green> &#9998; Application</font></h3>
+<p><font color=green>Ecrire une fonction <code>minimum(T, a)</code> qui retourne <strong>le rang</strong> du plus petit élément de la liste <code>T</code> entre l'élément d'indice <code>a</code> et le dernier élément de la liste (inclus).</font></p>
+<p><font color=green>Puis testez-la avec les listes crées ci-dessous</font></p>
+<pre><code class="language-python">def minimum(T, a) :
+    # à remplir
+    if len(T) == 0 :
+        return None
+    imini = a
+    for i in range(a+1,len(T)) :
+        if T[i] &lt; T[imini] :
+            imini = i
+    return imini
+
+# tests
+l1 = [3,2,9,6,8,1]
+l2 = [-2,0,5,7]
+l3 = []
+
+print(minimum(l1,0))
+print(minimum(l2,0))
+print(minimum(l3,0))
+</code></pre>
+<pre><code>5
+0
+None
+</code></pre>
+<h3 id="application_1"><font color=green> &#9998; Application</font></h3>
+<p><font color=green>Ecrire une fonction <code>echange(T, a, b)</code> qui permute dans la liste <code>T</code> les éléments d'indice <code>a</code> et <code>b</code>.</font></p>
+<p><font color=green>Puis testez-la avec des nouvelles listes ou celles crées au-dessus.</font></p>
+<pre><code class="language-python">def echange(T, a, b) :
+    # à remplir
+    T[a], T[b] = T[b], T[a]
+    return T
+
+# tests
+print(echange(l1,0,5))
+
+</code></pre>
+<pre><code>[1, 2, 9, 6, 8, 3]
+</code></pre>
+<h3 id="application_2"><font color=green> &#9998; Application</font></h3>
+<p><font color=green>Ecrire maintenant la fonction <code>tri_selection(T)</code> qui effectue le tri de la liste <code>T</code> par sélection, en suivant l'algorithme écrit dans le cours et en utilisant les 2 fonctions <code>minimum()</code> et <code>echange()</code>.</font></p>
+<pre><code class="language-python">def tri_selection(T) :
+    # à remplir
+    for i in range(len(T)) :
+        imini = minimum(T,i)
+        echange(T,imini,i)   
+    return T
+</code></pre>
+<p><font color=green>Tester cette fonction sur la liste <code>T</code> suivante :</p>
+<pre><code class="language-python"># Soit la liste suivante (10 éléments entiers) à trier
+T = [18, 3, 10, 25, 9, 5, 11, 13, 23, 8]
+</code></pre>
+<pre><code class="language-python">tri_selection(T)
+</code></pre>
+<pre><code>[3, 5, 8, 9, 10, 11, 13, 18, 23, 25]
+</code></pre>
+<h3 id="quelle-est-la-complexite-de-lalgorithme-de-tri-par-selection">Quelle est la complexité de l'algorithme de tri par sélection</h3>
+<p>Essayons de mesurer la durée d'un tri par sélection.</p>
+<p><em>On fait varier la taille n de la liste <code>T</code> de 0 à 5000 et on stocke dans une liste les durées d'exécution de la fonction <code>tri_selection(T)</code> en milliseconde, mesurées à l'aide la la fonction <code>perfcounter()</code> du module time, qui retourne un temps en secondes :</em></p>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+from time import perf_counter
+X, Y = [], []
+plt.close()
+for n in range(0, 5000, 500) :
+    T = [i for i in range(2,n)]         # création d'un tableau désordonné de n entiers
+    T.append(1)
+    debut = perf_counter()              # mesure du temps avant et après tri de T
+    tri_selection(T)
+    fin = perf_counter()
+    X.append(n)                         # construction des listes des valeurs de n et T(n)
+    Y.append(1000*(fin-debut))
+plt.plot(X, Y)                          # tracé de la courbe de variation de T(n) en fonction de n
+plt.show()
+</code></pre>
+<p><img alt="png" src="../img/output_17_0.png" /></p>
+<p>On constate, au premier abord que l'exécution du script prend un temps significatif.        <br />
+On observe ensuite, sur la courbe obtenue, qu'un doublement de la longueur du tableau, multiplie sa durée de tri par 4 !</p>
+<p>Plus rigoureusement, pour évaluer la performance d'un algorithme de tri, on peut compter, par exemple, le nombre de comparaisons de 2 éléments de la liste.    <br />
+Si la liste comprend <code>n</code> éléments et que, dans le pire des cas, le désordre initial est total, il faudra, pour ordonner l'ensemble du tableau :    </p>
+<p><center>$(n-1) + (n-2) + (n-3) + ... + 2 + 1 = n * (n-1) / 2 = n^2 / 2 - n / 2$ comparaisons</center></p>
+<p>En effet, ce tri implique <strong>2 boucles imbriquées</strong> :
+* la boucle <code>for</code> de la fonction <code>tri_selection()</code> qui parcours la liste du début à la fin (n itérations)
+* la boucle <code>for</code> de la fonction <code>minimum()</code> qui recherche le minimum d'une liste de (n-i itérations)</p>
+<p>Vous pouvez copier le code de votre fonction <code>minimum()</code> à la place de son appel dans la fonction <code>tri_selection()</code> pour mieux voir les boucles imbriquées.</p>
+<div class="alert alert-danger">
+
+Ce qui confirme que le tri par sélection est de **complexité quadratique** $O(n^2)$ !
+</div>
+
+<p>Pour rappel, voici les courbes des fonctions $f(n) = n$ (complexité linéaire) et $f(n) = n^2$ (complexité quadratique) :</p>
+<pre><code class="language-python">X = [i for i in range(0,10)]
+YL = [i for i in range(0,10)]
+YQ = [i**2 for i in range(0,10)]
+plt.close()
+plt.plot(X, YL, YQ)
+plt.show()
+</code></pre>
+<p><img alt="png" src="../img/output_21_0.png" /></p>
+<h2 id="tri-par-insertion">Tri par Insertion</h2>
+<p>Le tri par insertion parcours lui aussi la liste de la gauche vers la droite, en construisant sur la gauche une partie de la liste déjà triée.   <br />
+On va, à chaque étape, insérer le premier élément non encore trié parmi les éléments situés à sa gauche et déjà triés.    </p>
+<p><img alt="" src="TriInsertion.png" /></p>
+<div class="alert alert-info">
+
+Les **slices** sont des expressions du langage Python qui vous permettent en une ligne de code d’extraire des éléments d’une liste ou d’une chaîne de caractères. Exemples avec ``liste = [3,54,34,27,2,90]``
+
+* ``liste[a:b]`` ==> correspond à la sous-liste des éléments d'indice a à b-1
+* ``liste[0:3]`` ==> vaut ``[3, 54, 34]``
+    </div>
+
+<p>Pour <strong>implémenter en Python</strong> cet algorithme :</p>
+<p>Il faut disposer d'une fonction <code>insere(liste, i)</code> qui insère l'élément d'indice i (<code>liste[i]</code>) à la bonne blace dans la liste triée <code>liste[0:i]</code>.</p>
+<p>Pour cela on compare <code>liste[i]</code> aux éléments triés de <code>liste[0:i]</code> qui le précèdent. On repère le premier élément <code>liste[j]</code> plus grand que <code>liste[i]</code>, décaler les éléments de <code>liste[j:i]</code> plus grands que <code>liste[i]</code> d'une position vers la droite et placer <code>liste[i]</code> à la position j ainsi libérée. <code>liste[i]</code> sera déplacé à une position qui conserve l'ordre croissant des éléments de <code>liste[0:i+1]</code></p>
+<h3 id="application_3"><font color=green> &#9998; Application</font></h3>
+<p><font color=green>Compléter la fonction <code>insere(liste, i)</code> qui insère l'élément d'indice i à la bonne blace dans la partie de liste triée. Cette fonction retourne la liste après les modifications.</font></p>
+<p><font color=green>Puis testez-la avec les jeux de tests en dessous.</font></p>
+<pre><code class="language-python">def insere(liste, i) :
+    # tant que T[i] n'est pas à la bonne place dans T[0:i], on echange sa valeur avec celle de l'élément précédent.
+    while i &gt; 0 and liste[i] &lt; liste[i-1] :
+        liste[i], liste[i-1] = liste[i-1], liste[i]
+        i -= 1
+    return liste
+</code></pre>
+<pre><code class="language-python">l2 = [0,3,4,5,2,9]
+assert insere(l2,4) == [0, 2, 3, 4, 5, 9]
+
+l3 = [4,5,6,8,9,0,1]
+assert insere(l3, 5) == [0, 4, 5, 6, 8, 9, 1]
+assert insere(l3, 6) == [0, 1, 4, 5, 6, 8, 9]
+</code></pre>
+<h3 id="application_4"><font color=green> &#9998; Application</font></h3>
+<p><font color=green>Ecrire la fonction <code>tri_insertion(T)</code> qui effectue le tri de la liste T par insertion, en suivant l'algorithme vu en cours et en utilisant la fonction <code>insere()</code>.</font></p>
+<p><font color=green>Puis testez-la avec les jeux de tests en dessous.</font></p>
+<pre><code class="language-python">def tri_insertion(T) :
+    # à remplir
+    for i in range(1,len(T)) :
+        insere(T,i)
+    return T
+</code></pre>
+<p><font color=green>Tester cette fonction <code>tri_insertion(T)</code> sur la liste L suivante.</font></p>
+<pre><code class="language-python">L = [18, 3, 10, 25, 9, 5, 11, 13, 23, 8]
+
+# test de la fonction tri_insertion
+print(tri_insertion(L))
+</code></pre>
+<pre><code>[3, 5, 8, 9, 10, 11, 13, 18, 23, 25]
+</code></pre>
+<h3 id="quelle-est-la-complexite-de-lalgorithme-de-tri-par-insertion">Quelle est la complexité de l'algorithme de tri par insertion</h3>
+<p>Essayons de mesurer la durée d'un tri par insertion.</p>
+<p><em>On fait varier la taille n de la liste T de 0 à 5000 et on stocke dans une liste les durées d'exécution de la fonction <code>tri_insertion(T)</code> en milliseconde, mesurée à l'aide la la fonction <code>perfcounter()</code> du module time, qui retourne un temps en secondes :</em></p>
+<pre><code class="language-python">X, Y = [], []
+plt.close()
+for n in range(0, 5000, 500) :
+    T = [n-i for i in range(n)]
+    debut = perf_counter()
+    tri_insertion(T)
+    fin = perf_counter()
+    X.append(n)
+    Y.append(1000*(fin-debut))
+plt.plot(X, Y)
+plt.show()
+</code></pre>
+<p><img alt="png" src="../img/output_35_0.png" /></p>
+<p>On constate que l'exécution du script prend un temps significatif et, sur la courbe obtenue, qu'un doublement de la longueur de la liste, multiplie sa durée de tri par 4 !</p>
+<p>En effet, comme pour le tri par sélection, ce tri implique 2 boucles imbriquées :
+* la boucle <code>for</code> de la fonction <code>tri_insertion()</code> qui parcours la liste du début à la fin
+* la boucle <code>while</code> de la fonction <code>insere()</code> qui parcourt les i premiers éléments de la liste (dans le pire des cas)</p>
+<p><center>$1 + 2 + 3 + ... + (n-2) + (n-1) =  n * (n-1) / 2 =  (n^2 - n) / 2$ comparaisons</center></p>
+<p>Vous pouvez copier le code de votre fonction <code>insere()</code> à la place de son appel dans la fonction <code>tri_insertion()</code> pour mieux voir les boucles imbriquées.</p>
+<div class="alert alert-danger">
+
+Ce qui confirme que ce tri par insertion est de **complexité quadtarique** $O(n^2)$.
+    </div>
+
+<p>On a vu qu'une complexité quadratique n'est pas une solution efficace. Il existe d'autres algorithmes de tri plus performants, qui seront étudiés en classe de terminale.</p>
+<p>C'est le cas du tri fourni par Python dans la fonction <code>sorted()</code> : </p>
+<pre><code class="language-python">T = [18, 3, 10, 25, 9, 5, 11, 13, 23, 8]
+</code></pre>
+<pre><code class="language-python">print(sorted(T))
+</code></pre>
+<pre><code>[3, 5, 8, 9, 10, 11, 13, 18, 23, 25]
+</code></pre>
+<p>Evaluons son efficacité : </p>
+<pre><code class="language-python">X, Y = [], []
+plt.close()
+for n in range(0, 5000, 500) :
+    T = [n-i for i in range(n)]
+    debut = perf_counter()
+    sorted(T)
+    fin = perf_counter()
+    X.append(n)
+    Y.append(1000*(fin-debut))
+plt.plot(X, Y)
+plt.show()
+</code></pre>
+<p><img alt="png" src="../img/output_44_0.png" /></p>
+<p>Le tri est quasiment instantané, cette fonction à une complexité de $O(n.log(n))$ dans le pire des cas. C'est actuellement la complexité la plus basse pour les algorithmes de tri, le tri de Python est donc optimal !</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

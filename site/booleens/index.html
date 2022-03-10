@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>La logique booléenne - My Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Welcome to MkDocs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../TP%20tris_correction/" class="nav-link">TP tris correction</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">La logique booléenne</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../TP%20tris_correction/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#la-logique-booleenne" class="nav-link">La logique booléenne</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#1-les-operateurs-de-la-logique-booleenne" class="nav-link">1. Les opérateurs de la logique booléenne</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2-les-circuits-logiques-binaires" class="nav-link">2. Les circuits logiques binaires</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#3-les-expressions-logiques-evaluation-court-circuit" class="nav-link">3. Les expressions logiques : évaluation «court-circuit»</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="la-logique-booleenne">La logique booléenne</h1>
+<p>Un ordinateur est doté de circuits électroniques qui lui permettent de stocker des informations (la mémoire) et de faire des calculs (l’unité arithmétique et logique du processeur). Ces circuits électroniques fonctionnent avec deux niveaux de signal électronique : le courant passe («1» ou «vrai») ou ne passe pas («0» ou «faux»).</p>
+<p>On parle de <strong>logique binaire ou booléenne</strong>, et l’information véhiculée par le signal électrique est appelée <strong>bit</strong>, abréviation de l’anglais <strong>binary digit</strong>.</p>
+<h2 id="1-les-operateurs-de-la-logique-booleenne">1. Les opérateurs de la logique booléenne</h2>
+<p>La logique binaire, ou logique booléenne, a trois principaux opérateurs pour manipuler les valeurs logiques Vrai et Faux : 
+- la négation (NOT) : soit A une valeur logique, <code>NOT(A)</code> (ou <code>non A</code>) est vrai si A est faux et vice versa
+- le <strong>et</strong> logique (AND) : soient A et B deux valeurs logiques, <code>AND(A,B)</code> (ou <code>A et B</code>) est vrai si et seulement si A est vrai et B est vrai
+- le ou logique (OR) : soient A et B deux valeurs logiques, <code>OR(A,B)</code> (ou <code>A ou B</code>) est vrai si et seulement si A est vrai ou B est vrai, y compris si les deux sont vrais.</p>
+<div class="alert alert-success" role="alert">
+
+Attention l'opérateur OR est un "ou inclusif", à ne pas confondre avec l'opérateur XOR qui correpond au "ou exclusif" (fromage ou dessert, pas les deux).
+</div>
+
+<p>La table suivante est la <strong>table de vérité</strong> de ces trois opérateurs. Elle représente le résultat de chaque opérateur pour toutes les valeurs de vérité des opérandes A et B :</p>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>Non A</th>
+<th>Non B</th>
+<th>A ou B</th>
+<th>A et B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vrai</td>
+<td>Vrai</td>
+<td>Faux</td>
+<td>Faux</td>
+<td>Vrai</td>
+<td>Vrai</td>
+</tr>
+<tr>
+<td>Vrai</td>
+<td>Faux</td>
+<td>Faux</td>
+<td>Vrai</td>
+<td>Vrai</td>
+<td>Faux</td>
+</tr>
+<tr>
+<td>Faux</td>
+<td>Vrai</td>
+<td>Vrai</td>
+<td>Faux</td>
+<td>Vrai</td>
+<td>Faux</td>
+</tr>
+<tr>
+<td>Faux</td>
+<td>Faux</td>
+<td>Vrai</td>
+<td>Vrai</td>
+<td>Faux</td>
+<td>Faux</td>
+</tr>
+</tbody>
+</table>
+<p>Les opérations en logique booléennes ont les propriétés importantes suivantes :
+- Commutativité : A et B == B et A ; A ou B == B ou A.
+- Associativité : A et (B et C) == (A et B) et C ; A ou (B ou C) == (A ou B) ou C.
+- Distributivité : A et (B ou C) == (A et B) ou (A et C) ; A ou (B et C) == (A ou B) et (A ou C).</p>
+<p>Par contre, A et (B ou C) n’est pas équivalent à (A et B) ou C.
+Elles vérifient également les identités remarquables, appelées <strong>Lois de De Morgan</strong> :
+- non (A et B) == non A ou non B
+- non (A ou B) == non A et non B</p>
+<p>Enfin, toutes les fonctions booléennes peuvent s’exprimer avec une combinaison des opérateurs ou, et et non.</p>
+<h2 id="2-les-circuits-logiques-binaires">2. Les circuits logiques binaires</h2>
+<p>Les circuits intégrés des ordinateurs sont constitués de portes logiques (appelés transistors) qui permettent de combiner des signaux binaires. Si l’on convient que la présence d’un signal électrique représente la valeur logique Vrai et son absence la valeur logique Faux, les portes logiques permettent de combiner ces signaux pour effectuer les opérations de la logique booléenne.</p>
+<p>Les portes logiques sont représentées conventionnellement par les schémas ci-dessous dans les circuits logiques.</p>
+<p><img alt="" src="img/TriSelection.png" /></p>
+<p>La combinaison des portes logiques permet de construire les composants de base d’un ordinateur comme, par exemple, l’addition de nombres binaires dans le processeur. Dans ce cas, les valeurs booléennes Vrai et Faux sont interprétées comme 1 et 0.</p>
+<p>Dans le schéma ci-contre, la sortie S est la somme des deux bits A et B, et R la retenue. Ainsi, si A vaut 1 et B vaut 1, la somme est 2, soit 10 en binaire, donc S vaut 0 et R vaut 1.</p>
+<h2 id="3-les-expressions-logiques-evaluation-court-circuit">3. Les expressions logiques : évaluation «court-circuit»</h2>
+<p>Dans les langages de programmation comme Python, les valeurs de type booléen (True et False) implémentent la logique booléenne. Cependant, les opérateurs tirent parti des propriétés suivantes qui permettent d’accélérer le calcul d’expressions booléennes dans certains cas :
+- <code>Faux et B</code> vaut Faux quelle que soit la valeur de B
+- <code>Vrai ou B</code> vaut vrai quelle que soit la valeur de B</p>
+<p>Ainsi, si l’on a une expression A et B et que l’on a calculé que A est faux, le résultat est forcément faux et il n’y a donc pas besoin de calculer B. De même, si l’on a une expression A ou B et que l’on a calculé que A est vrai, le résultat est forcément vrai et on n’a pas besoin de calculer B. On parle d’évaluation <strong>court-circuit</strong>.</p>
+<p>Ainsi, bien que ces opérateurs soient en principe commutatifs, l’ordre des termes dans les expressions booléennes de Python a de l’importance.</p>
+<p>Considérons l’expression Python <code>y/x &gt; 0 and x != 0</code> et que x est nul, le calcul de <code>y/x &gt; 0</code> provoque une erreur de division par zéro.
+Par contre, si l’on écrit <code>x != 0 and y/x &gt; 0</code>. Si x est nul, <code>x != 0</code> est faux et donc on n’a pas besoin de calculer <code>y/x &gt; 0</code>, ce qui évite de provoquer l'erreur de division par zéro. L’ordre d’évaluation est donc important.</p>
+<p>En résumé, dans une expression conjonctive A and B and C and …, la première condition fausse arrête le calcul de l’expression, qui vaut False.
+Dans une expression disjonctive A or B or C or …, la première condition vraie arrête le calcul de l’expression, qui vaut True.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,22 @@
+site_name: NSI
+theme:
+  name: material
+  language: fr
+  palette:
+    primary: green
+site_url: https://sibylleginger.github.io
+nav:
+  - 'Algorithmes':
+    - 'Algorithmes de tris':
+      - 'Cours': 'c1c.md'
+      - 'TP' : 'TP tris_correction.md'
+      - 'Révision' : 'c1r.md'
+  - 'Partie 2':
+    - "C4 : entier positif":
+      - 'Cours': 'c4c.md'
+      - 'Activité' : 'c4a.md'
+      - 'Révision' : 'c4r.md'
+    - "Booléens":
+      - 'Cours': 'booleens.md'
+      - 'Activité' : 'c7a.md'
+      - 'Révision' : 'c7r.md'
