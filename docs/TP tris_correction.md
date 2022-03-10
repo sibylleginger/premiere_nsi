@@ -81,7 +81,7 @@ def tri_selection(T) :
     return T
 ```
 
-<font color=green>Tester cette fonction sur la liste ``T`` suivante :
+<font color=green>Tester cette fonction sur la liste ``T`` suivante :</font>
 
 
 ```python
