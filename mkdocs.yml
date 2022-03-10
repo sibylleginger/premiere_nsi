@@ -8,15 +8,15 @@ site_url: https://sibylleginger.github.io
 nav:
   - 'Algorithmes':
     - 'Algorithmes de tris':
-      - 'Cours': 'c1c.md'
+      - 'Cours': 'test'
       - 'TP' : 'TP tris_correction.md'
-      - 'Révision' : 'c1r.md'
+      - 'Révision' : 'test'
   - 'Partie 2':
     - "C4 : entier positif":
-      - 'Cours': 'c4c.md'
-      - 'Activité' : 'c4a.md'
-      - 'Révision' : 'c4r.md'
+      - 'Cours': 'test'
+      - 'Activité' : 'test'
+      - 'Révision' : 'test'
     - "Booléens":
       - 'Cours': 'booleens.md'
-      - 'Activité' : 'c7a.md'
-      - 'Révision' : 'c7r.md'
+      - 'Activité' : 'test'
+      - 'Révision' : 'test'
