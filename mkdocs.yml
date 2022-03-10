@@ -1,5 +1,9 @@
 site_name: NSI
+
 theme:
+  features:
+    - navigation.tabs
+    - navigation.indexes
   name: material
   language: fr
   palette:
@@ -7,16 +11,14 @@ theme:
 site_url: https://sibylleginger.github.io
 nav:
   - 'Algorithmes':
+    - 'algo/index.md'
     - 'Algorithmes de tris':
-      - 'Cours': 'test'
+      - 'Cours': 'TP tris_correction.md'
       - 'TP' : 'TP tris_correction.md'
       - 'Révision' : 'test'
-  - 'Partie 2':
-    - "C4 : entier positif":
-      - 'Cours': 'test'
-      - 'Activité' : 'test'
-      - 'Révision' : 'test'
+  - 'Types de base':
+    - 'types_bases/index.md'
     - "Booléens":
-      - 'Cours': 'booleens.md'
-      - 'Activité' : 'test'
+      - 'Cours': 'types_bases/booleens.md'
+      - 'TP' : 'types_bases/TP conversion bases.md'
       - 'Révision' : 'test'
