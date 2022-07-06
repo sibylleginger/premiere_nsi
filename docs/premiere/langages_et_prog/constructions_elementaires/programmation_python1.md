@@ -1,13 +1,17 @@
-# Programmation - Python- 1
+# Programmation Python - 1
 
 ## Les variables
 
 En informatique on utilise des données qui peuvent être des nombres, des chaînes de caractères (mots ou phrases), des booléens (Vrai ou Faux), des tableaux, etc.
 
-Pour pouvoir les utiliser il faut les stocker dans des variables. Une variable est une petite information (une donnée) temporaire que l'on stocke dans une case de la mémoire. On dit qu'elle est "variable" car c'est une valeur qui peut changer pendant le déroulement du programme. Une variable est constituée de 2 choses :
+Pour pouvoir les utiliser il faut les stocker dans des **variables**.
+
+<div style="background-color: #f78278; border-color: #fe4434">
+Une variable est une petite information (une donnée) temporaire que l'on stocke dans une case de la mémoire. On dit qu'elle est "variable" car c'est une valeur qui peut changer pendant le déroulement du programme. Une variable est constituée de 2 choses :
 
 * une valeur : c'est la donnée qu'elle stocke (par exemple le nombre 5)
 * un nom : c'est ce qui permet de la reconnaître. Nous n'aurons pas à retenir l'adresse de mémoire, nous allons juste indiquer des noms de variables à la place.
+</div>
 
 Dans certains langages (C, Java . . . ), le type d'une variable doit être déclaré avant son affectation et il ne peut pas changer, on parle de typage statique.
 Python est un langage à typage dynamique, c'est-à-dire que le type d'une variable peut changer après réaffectation.

@@ -9,7 +9,7 @@ Dans ce notebook nous allons implémenter en Python, les deux algorithmes de tri
 Le tri par sélection parcours la liste de la gauche vers la droite, en maintenant sur la gauche une partie de la liste déjà triée et où les éléments sont rangés à leur place définitive.     
 A chaque étape, on cherche le plus petit élément dans la partie de droite non triée de la liste, puis on l'échange avec l'élément le plus à gauche de cette partie non triée :
 
-![](TriSelection.png)
+![](/premiere/img/TriSelection.png)
 
 Pour implémenter en Python cet algorithme, nous allons nous aider de l'algorithme construit en cours et **diviser les différentes étapes en plusieurs fonctions**.
 
@@ -127,7 +127,7 @@ plt.show()
 
 
     
-![png](img/output_17_0.png)
+![png](/premiere/img/output_17_0.png)
     
 
 
@@ -164,7 +164,7 @@ plt.show()
 
 
     
-![png](img/output_21_0.png)
+![png](/premiere/img/output_21_0.png)
     
 
 
@@ -176,7 +176,7 @@ plt.show()
 Le tri par insertion parcours lui aussi la liste de la gauche vers la droite, en construisant sur la gauche une partie de la liste déjà triée.     
 On va, à chaque étape, insérer le premier élément non encore trié parmi les éléments situés à sa gauche et déjà triés.    
 
-![](TriInsertion.png)
+![](/premiere/img/TriInsertion.png)
 
 <div class="alert alert-info">
     
@@ -269,7 +269,7 @@ plt.show()
 
 
     
-![png](img/output_35_0.png)
+![png](/premiere/img/output_35_0.png)
     
 
 
@@ -326,7 +326,7 @@ plt.show()
 
 
     
-![png](img/output_44_0.png)
+![png](/premiere/img/output_44_0.png)
     
 
 
